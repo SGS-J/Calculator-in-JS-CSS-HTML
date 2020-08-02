@@ -2,17 +2,9 @@
 
 var display;
 var equalPressed;
-/**
- * 'operationMap' value stores the string that will be 
- * used with the function 'eval()' to calculate the 
- * result of the operation performed on the calculator.
- */
+
 var operationMap;
-/**
- * The value 'showingResults' is to show the results
- * when the operation buttons are pressed as long as
- * its true.
- */
+
 var showingResults;
 
 window.onload = function init() {
