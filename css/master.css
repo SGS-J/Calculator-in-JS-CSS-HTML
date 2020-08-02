@@ -1,0 +1,62 @@
+body {
+   margin: 0;
+   padding: 0;
+   background: linear-gradient(to right, rgb(30,87,153) 11%,
+                                       rgb(32,124,202) 34%,rgb(32,124,202) 35%,
+                                       rgb(41,137,216) 60%,rgb(125,185,232) 91%,
+                                       rgb(125,185,232) 91%) fixed; 
+}
+
+.calculatorBox {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border: solid;
+   border-color: rgba(125, 232, 240, 0.39);
+   border-radius: 5px;
+   background: rgba(255, 255, 255, 0.486);
+}
+
+.displayPanel input{
+   margin: 10px;
+   padding-left: 20px;
+   height: 90px;
+   width: 578px;
+   font-size: 50px;
+   outline: none;
+   background: rgba(255, 255, 255, 0.336);
+   border: none;
+   border-radius: 3px;
+   transition: step-end;
+   color: rgba(0, 102, 255, 0.473);
+}
+
+.displayPanel input:hover {
+   background: rgba(255, 255, 255, 0.555);
+}
+
+.buttonPanel input{
+   margin: 10px;
+   height: 80px;
+   width: 100px;
+   font-size: 30px;
+   cursor: pointer;
+   border: none;
+   color: rgb(255, 255, 255);
+   background: rgb(91, 153, 235);
+   outline: none;
+   transition: step-end;
+}
+
+.buttonPanel .pointButton {
+   width: 225px;
+}
+
+.buttonPanel .equalButton {
+   height: 183px;
+}
+
+.buttonPanel input:hover {
+   background: rgb(125, 170, 230);
+}
