@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator | Sample</title>
+    <link rel="stylesheet" href="css/master.css" />
+    <script src="js/app.js"></script>
+  </head>
+
+  <body>
+      <div class="calculatorBox">
+        <div class="displayPanel">
+          <input type="text" readonly />
+        </div>
+        <div class="buttonPanel">
+          <table>
+            <tr>
+              <td><input type="button" value="7" onclick="put(7)" /></td>
+              <td><input type="button" value="8" onclick="put(8)" /></td>
+              <td><input type="button" value="9" onclick="put(9)" /></td>
+              <td><input type="button" value="÷" onclick="putSign('/')" /></td>
+              <td><input type="button" value="C" onclick="erase()" /></td>
+            </tr>
+
+            <tr>
+              <td><input type="button" value="4" onclick="put(4)" /></td>
+              <td><input type="button" value="5" onclick="put(5)" /></td>
+              <td><input type="button" value="6" onclick="put(6)" /></td>
+              <td><input type="button" value="x" onclick="putSign('*')" /></td>
+              <td><input type="button" value="<" onclick="back()" /></td>
+            </tr>
+
+            <tr>
+              <td><input type="button" value="1" onclick="put(1)" /></td>
+              <td><input type="button" value="2" onclick="put(2)" /></td>
+              <td><input type="button" value="3" onclick="put(3)" /></td>
+              <td><input type="button" value="-" onclick="putSign('-')" /></td>
+              <td rowspan="2"><input class="equalButton" type="button" value="=" onclick="equals()" /></td>
+            </tr>
+
+            <tr>
+              <td><input type="button" value="0" onclick="put(0)" /></td>
+              <td colspan="2"><input class="pointButton" type="button" value="." onclick="put('.')" /></td>
+              <td><input type="button" value="+" onclick="putSign('+')" /></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </body>
+</html>
