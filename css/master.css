@@ -21,6 +21,29 @@ body {
    background: rgba(255, 255, 255, 0.486);
 }
 
+.cornerButtonBox {
+   position: absolute;
+   top: -8%;
+   font-size: 1.2rem;
+   height: 26%;
+   font-family: monospace;
+   color: rgba(255, 255, 255, 0.705);
+}
+
+.cornerButtonBox input {
+   position: relative;
+   outline: none;
+   border: none;
+   font-size: inherit;
+   height: inherit;
+   color: inherit;
+   background: rgba(0, 119, 255, 0.425);
+}
+
+.cornerButtonBox input:hover {
+   background: rgba(0, 119, 255, 0.637);
+}
+
 .displayPanel {
    position: relative;
    padding: 0;
@@ -44,7 +67,15 @@ body {
    cursor: initial;
 }
 
-.displayPanel input:hover {
+.displayPanel .placeHolder {
+   position: absolute;
+   top: 15%;
+   left: 5%;
+   color: rgba(0, 102, 255, 0.473);
+   font-size: 1rem;
+}
+
+.displayPanel input:hover{
    background: rgba(255, 255, 255, 0.555);
 }
 
@@ -77,27 +108,24 @@ body {
    transition: 0.3s;
 }
 
-.buttonPanel .zeroButton {
-   width: 100%;
-}
-
-.buttonPanel .equalButton {
-   height: 100%;
-}
-
 .buttonPanel input:hover {
    background: rgb(125, 170, 230);
 }
-
 
 /* Android devices */
 @media screen and (max-width : 480px){
    .calculatorBox{    
       width: 96%; 
       height: 88%;
+      top: 53%;
       transition: unset;
    }
    
+   .cornerButtonBox {
+      top: -9%;
+      height: 28%;
+   }
+
    .displayPanel input{
       width: 91.4%;
       font-size: 3.5rem;
