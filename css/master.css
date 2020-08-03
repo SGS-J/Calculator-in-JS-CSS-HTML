@@ -38,10 +38,11 @@ body {
    height: inherit;
    color: inherit;
    background: rgba(0, 119, 255, 0.425);
+   transition: 0.2s;
 }
 
 .cornerButtonBox input:hover {
-   background: rgba(0, 119, 255, 0.637);
+   background: rgba(0, 119, 255, 0.781);
 }
 
 .displayPanel {
