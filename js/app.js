@@ -1,10 +1,12 @@
 "use strict";
 
 var display;
+var placeHolder;
+var placeHolderEnabled;
 var equalPressed;
 /**
- * 'operationMap' value stores the string that will be 
- * used with the function 'eval()' to calculate the 
+ * 'operationMap' value stores the string that will be
+ * used with the function 'eval()' to calculate the
  * result of the operation performed on the calculator.
  */
 var operationMap;
@@ -17,32 +19,31 @@ var showingResults;
 
 window.onload = function init() {
   display = document.querySelector(".displayPanel input");
+  placeHolder = document.querySelector(".displayPanel .placeHolder");
+  placeHolderEnabled = true;
   operationMap = "";
   showingResults = false;
   equalPressed = false;
 };
 
-function put(char) {
-  if(equalPressed){
-    display.value = "";
-    equalPressed = false;
-  }
-  if (showingResults) {
+function put(num) {
+  if (showingResults || equalPressed) {
     display.value = "";
     showingResults = false;
   }
-  if (char == ".") {
+  if (num == ".") {
     if (!display.value.includes(".")) {
       display.value += ".";
     }
   } else {
-    display.value += char;
+    display.value += num;
   }
-  operationMap += char;
+  operationMap += num;
+  showMapOnPlaceHolder();
 }
 
 function putSign(sign) {
-  if(equalPressed){
+  if (equalPressed) {
     display.value = "";
     equalPressed = false;
   }
@@ -53,23 +54,29 @@ function putSign(sign) {
     showingResults = true;
   }
   operationMap += sign;
+  showMapOnPlaceHolder();
+}
+
+function showMapOnPlaceHolder() {
+  placeHolder.innerHTML = operationMap;
 }
 
 function erase() {
   display.value = "";
   operationMap = "";
   showingResults = false;
+  equalPressed = false;
+  placeHolder.innerHTML = "";
 }
 
-function back() {
-  if(equalPressed){
-    display.value = "";
-    equalPressed = false;
-  }
-  if (!showingResults) {
+function backSpace() {
+  if (equalPressed) {
+    erase();
+  } else if (!showingResults) {
     let output = display.value;
     display.value = output.substring(0, output.length - 1);
-    operationMap = operationMap.substring(0, output.length - 1);
+    operationMap = operationMap.substring(0, operationMap.length - 1);
+    showMapOnPlaceHolder();
   }
 }
 
@@ -79,5 +86,17 @@ function equals() {
   if (operation) {
     display.value = operation;
     operationMap = "";
+  }
+}
+
+function setPlaceholder() {
+  if (placeHolderEnabled) {
+    placeHolder.style.opacity = 0;
+    document.querySelector(".cornerButtonBox label").innerHTML = "No";
+    placeHolderEnabled = false;
+  } else {
+    placeHolder.style.opacity = 1;
+    document.querySelector(".cornerButtonBox label").innerHTML = "Yes";
+    placeHolderEnabled = true;
   }
 }

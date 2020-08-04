@@ -10,7 +10,12 @@
 
   <body>
       <div class="calculatorBox">
+        <div class="cornerButtonBox" >
+          <input type="button" value="Placeholder" onclick="setPlaceholder()">
+          <label>Yes</label>
+        </div>
         <div class="displayPanel">
+          <label class="placeHolder"></label>
           <input type="text" readonly />
         </div>
         <div class="buttonPanel">
@@ -28,7 +33,7 @@
               <td><input type="button" value="5" onclick="put(5)" /></td>
               <td><input type="button" value="6" onclick="put(6)" /></td>
               <td><input type="button" value="x" onclick="putSign('*')" /></td>
-              <td><input type="button" value="<" onclick="back()" /></td>
+              <td><input type="button" value="<" onclick="backSpace()" /></td>
             </tr>
 
             <tr>
@@ -40,8 +45,8 @@
             </tr>
 
             <tr>
-              <td><input type="button" value="0" onclick="put(0)" /></td>
-              <td colspan="2"><input class="pointButton" type="button" value="." onclick="put('.')" /></td>
+              <td colspan="2"><input class="zeroButton" type="button" value="0" onclick="put(0)" /></td>
+              <td><input type="button" value="." onclick="put('.')" /></td>
               <td><input type="button" value="+" onclick="putSign('+')" /></td>
             </tr>
           </table>
